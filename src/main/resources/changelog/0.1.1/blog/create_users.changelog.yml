@@ -1,0 +1,34 @@
+databaseChangeLog:
+  - changeSet:
+      id: create users table
+      author: shakib
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: ID
+                  type: varchar(36)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: NAME
+                  type: varchar(32)
+              - column:
+                  name: EMAIL
+                  type: varchar(32)
+              - column:
+                  name: CONTACT_NO
+                  type: varchar(32)
+              - column:
+                  name: USER_TYPE
+                  type: varchar(32)
+              - column:
+                  name: STATUS
+                  type: INT(1)
+              - column:
+                  name: CREATED_ON
+                  type: timestamp
+                  constraints:
+                    nullable: false

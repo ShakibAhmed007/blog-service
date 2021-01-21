@@ -1,0 +1,43 @@
+databaseChangeLog:
+  - changeSet:
+      id: create blog_posts table
+      author: shakib
+      changes:
+        - createTable:
+            tableName: blog_posts
+            columns:
+              - column:
+                  name: ID
+                  type: varchar(36)
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: POST_TITLE
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                    name: POST_DESCRIPTION
+                    type: text
+              - column:
+                  name: POST_STATUS
+                  type: INT(1)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: CREATED_BY
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: CREATED_ON
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: UPDATED_BY
+                  type: varchar(255)
+              - column:
+                  name: UPDATED_ON
+                  type: timestamp
