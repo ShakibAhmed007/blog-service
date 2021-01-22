@@ -4,7 +4,7 @@ databaseChangeLog:
       author: shakib
       changes:
         - createTable:
-            tableName: blog_posts_votes
+            tableName: votes
             columns:
               - column:
                   name: ID
@@ -14,13 +14,24 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: POST_ID
-                  type: varchar(32)
+                  type: varchar(36)
+                  constraints:
+                    nullable: false
               - column:
-                  name: VOTE
+                  name: UPVOTE
                   type: INT(1)
+                  constraints:
+                    nullable: false
+                    value: 0
+              - column:
+                  name: DOWNVOTE
+                  type: INT(1)
+                  constraints:
+                    nullable: false
+                    value: 0
               - column:
                   name: CREATED_BY
-                  type: varchar(255)
+                  type: varchar(36)
                   constraints:
                     nullable: false
               - column:
@@ -30,7 +41,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: UPDATED_BY
-                  type: varchar(255)
+                  type: varchar(36)
               - column:
                   name: UPDATED_ON
                   type: timestamp

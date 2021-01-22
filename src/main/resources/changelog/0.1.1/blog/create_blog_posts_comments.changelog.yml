@@ -4,7 +4,7 @@ databaseChangeLog:
       author: shakib
       changes:
         - createTable:
-            tableName: blog_posts_comments
+            tableName: comments
             columns:
               - column:
                   name: ID
@@ -14,13 +14,19 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: POST_ID
-                  type: varchar(32)
+                  type: varchar(36)
+                  constraints:
+                    nullable: false
+                    value: 0
               - column:
                   name: COMMENT
                   type: text
               - column:
                   name: STATUS
                   type: INT(1)
+                  constraints:
+                    nullable: false
+                    value: 1
               - column:
                   name: CREATED_BY
                   type: varchar(255)

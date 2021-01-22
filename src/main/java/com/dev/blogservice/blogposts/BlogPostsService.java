@@ -1,5 +1,6 @@
 package com.dev.blogservice.blogposts;
 
+import com.dev.blogservice.votes.VotesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -15,9 +16,14 @@ public class BlogPostsService {
     @Autowired
     private BlogPostsRepository repository;
 
+    @Autowired
+    private VotesService voteService;
+
     public List<BlogPosts> getBlogPostsList() {
-        List<BlogPosts> posts = new ArrayList<BlogPosts>();
-        repository.findAllByOrder().forEach(post -> posts.add(post));
+        List<BlogPosts> posts =  repository.findAllByOrder();
+        posts.forEach(post-> {
+            post.setVotes(voteService.getVoteById(post.getId()));
+        });
         return posts;
     }
 

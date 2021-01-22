@@ -18,18 +18,29 @@ databaseChangeLog:
               - column:
                   name: EMAIL
                   type: varchar(32)
+                  constraints:
+                    nullable: false
               - column:
                   name: PASSWORD
-                  type: varchar(32)
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
               - column:
                   name: CONTACT_NO
                   type: varchar(32)
+                  constraints:
+                    nullable: false
               - column:
                   name: USER_TYPE
                   type: varchar(32)
+                  constraints:
+                    nullable: false
               - column:
                   name: STATUS
                   type: INT(1)
+                  constraints:
+                    nullable: false
+                    value: 1
               - column:
                   name: CREATED_BY
                   type: varchar(255)
