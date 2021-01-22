@@ -5,3 +5,9 @@ databaseChangeLog:
   - include:
       file: blog/create_blog_posts.changelog.yml
       relativeToChangelogFile: true
+  - include:
+      file: blog/create_blog_posts_comments.changelog.yml
+      relativeToChangelogFile: true
+  - include:
+      file: blog/create_blog_posts_votes.changelog.yml
+      relativeToChangelogFile: true

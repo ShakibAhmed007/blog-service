@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: create users table
+      id: create blog_posts_comments table
       author: shakib
       changes:
         - createTable:
-            tableName: users
+            tableName: blog_posts_comments
             columns:
               - column:
                   name: ID
@@ -13,20 +13,11 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: NAME
+                  name: POST_ID
                   type: varchar(32)
               - column:
-                  name: EMAIL
-                  type: varchar(32)
-              - column:
-                  name: PASSWORD
-                  type: varchar(32)
-              - column:
-                  name: CONTACT_NO
-                  type: varchar(32)
-              - column:
-                  name: USER_TYPE
-                  type: varchar(32)
+                  name: COMMENT
+                  type: text
               - column:
                   name: STATUS
                   type: INT(1)

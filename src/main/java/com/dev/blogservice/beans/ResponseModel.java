@@ -1,18 +1,17 @@
 package com.dev.blogservice.beans;
 
-import com.dev.blogservice.blogposts.BlogPosts;
-import liquibase.pro.packaged.T;
+import lombok.Data;
 import org.springframework.http.HttpStatus;
 
-import java.util.List;
 
-public class ResponseModel {
+@Data
+public class ResponseModel<T> {
 
     private int status;
     private String message;
-    private List<BlogPosts> data;
+    private T data;
 
-    public ResponseModel success(List<BlogPosts> data) {
+    public ResponseModel success(T data) {
         ResponseModel obj = new ResponseModel();
         obj.status = HttpStatus.OK.value();
         obj.data = data;

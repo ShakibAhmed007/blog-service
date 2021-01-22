@@ -25,23 +25,24 @@ public class MasterDTO {
     @Column(name = "ID", nullable = false)
     private String id;
 
-    @JsonIgnore
-    @Column(name = "CREATED_BY", nullable = false, updatable = false)
+    @Column(name = "CREATED_BY", nullable = false)
     private String createdBy;
 
     @JsonIgnore
     @Column(name = "UPDATED_BY")
     private String updatedBy;
 
+    @Basic(optional = false)
+    @Column(name = "CREATED_ON", insertable = false, updatable = false)
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "CREATED_ON", nullable = false, updatable = false)
-    @CreatedDate
     @JsonIgnore
     private Date createdOn;
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "UPDATED_ON", nullable = true)
+    @Column(name = "UPDATED_ON")
     @LastModifiedDate
     @JsonIgnore
     private Date updatedOn;
+
+
 }

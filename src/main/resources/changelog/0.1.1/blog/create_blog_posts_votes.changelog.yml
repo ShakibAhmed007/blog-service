@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
-      id: create users table
+      id: create blog_posts_votes table
       author: shakib
       changes:
         - createTable:
-            tableName: users
+            tableName: blog_posts_votes
             columns:
               - column:
                   name: ID
@@ -13,22 +13,10 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: NAME
+                  name: POST_ID
                   type: varchar(32)
               - column:
-                  name: EMAIL
-                  type: varchar(32)
-              - column:
-                  name: PASSWORD
-                  type: varchar(32)
-              - column:
-                  name: CONTACT_NO
-                  type: varchar(32)
-              - column:
-                  name: USER_TYPE
-                  type: varchar(32)
-              - column:
-                  name: STATUS
+                  name: VOTE
                   type: INT(1)
               - column:
                   name: CREATED_BY
