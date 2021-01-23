@@ -1,4 +1,4 @@
-package com.dev.blogservice.model;
+package com.dev.blogservice.beans;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

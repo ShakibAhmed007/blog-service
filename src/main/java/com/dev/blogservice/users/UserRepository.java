@@ -6,8 +6,8 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface UserRepository extends JpaRepository<UserModel, String> {
+public interface UserRepository extends JpaRepository<User, String> {
 
-    @Query(value = "SELECT u FROM UserModel u WHERE u.email = :email and u.password = :password and u.status = 1")
-    UserModel findUserByEmailAndPassword(@Param(value = "email") String email, @Param(value = "password") String password);
+    @Query(value = "SELECT u FROM User u WHERE u.email = :email and u.password = :password and u.status = 1")
+    User findUserByEmailAndPassword(@Param(value = "email") String email, @Param(value = "password") String password);
 }

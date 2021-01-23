@@ -1,6 +1,6 @@
 package com.dev.blogservice.users;
 
-import com.dev.blogservice.model.MasterDTO;
+import com.dev.blogservice.beans.MasterDTO;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Table(name = "users")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class UserModel extends MasterDTO {
+public class User extends MasterDTO {
     @Column(name = "NAME")
     private String name;
     @Column(name = "EMAIL", nullable = false)

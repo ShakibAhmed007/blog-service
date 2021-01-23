@@ -1,6 +1,6 @@
 package com.dev.blogservice.blogposts;
 
-import com.dev.blogservice.beans.ResponseModel;
+import com.dev.blogservice.beans.ResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -16,25 +16,25 @@ public class BlogPostsController {
     private BlogPostsService blogPostsService;
 
     @GetMapping(value = "/post/get", produces= MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ResponseModel> getBlogPosts() throws Throwable {
-        return ResponseEntity.ok(new ResponseModel().success(blogPostsService.getBlogPostsList()));
+    public ResponseEntity<ResponseDTO> getBlogPosts() throws Throwable {
+        return ResponseEntity.ok(new ResponseDTO().success(blogPostsService.getBlogPostsList()));
     }
 
     @GetMapping(value = "/post/get/{postId}", produces= MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ResponseModel> getBlog(@PathVariable("postId") String postId) throws Throwable{
-        return ResponseEntity.ok(new ResponseModel().success(blogPostsService.getBlogPostById(postId)));
+    public ResponseEntity<ResponseDTO> getBlog(@PathVariable("postId") String postId) throws Throwable{
+        return ResponseEntity.ok(new ResponseDTO().success(blogPostsService.getBlogPostById(postId)));
     }
 
     @PostMapping(value = "/post", produces= MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ResponseModel> saveBlog(@RequestBody @Valid BlogPosts post) throws Throwable{
+    public ResponseEntity<ResponseDTO> saveBlog(@RequestBody @Valid BlogPosts post) throws Throwable{
         blogPostsService.save(post);
-        return ResponseEntity.ok(new ResponseModel().success(post));
+        return ResponseEntity.ok(new ResponseDTO().success(post));
     }
 
     @DeleteMapping(value = "/post/{postId}", produces= MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ResponseModel> deleteBlog(@PathVariable("postId") String postId) throws Throwable{
+    public ResponseEntity<ResponseDTO> deleteBlog(@PathVariable("postId") String postId) throws Throwable{
         blogPostsService.delete(postId);
-        return ResponseEntity.ok(new ResponseModel().success(postId));
+        return ResponseEntity.ok(new ResponseDTO().success(postId));
     }
 
 

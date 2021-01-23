@@ -1,6 +1,6 @@
 package com.dev.blogservice.comments;
 
-import com.dev.blogservice.model.MasterDTO;
+import com.dev.blogservice.beans.MasterDTO;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;

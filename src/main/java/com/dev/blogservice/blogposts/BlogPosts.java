@@ -1,18 +1,12 @@
 package com.dev.blogservice.blogposts;
 
-import com.dev.blogservice.model.MasterDTO;
+import com.dev.blogservice.beans.MasterDTO;
 import com.dev.blogservice.votes.Votes;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
-import org.hibernate.annotations.GenericGenerator;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import java.util.Date;
 import java.util.List;
 
 @Data

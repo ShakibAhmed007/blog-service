@@ -5,14 +5,14 @@ import org.springframework.http.HttpStatus;
 
 
 @Data
-public class ResponseModel<T> {
+public class ResponseDTO<T> {
 
     private int status;
     private String message;
     private T data;
 
-    public ResponseModel success(T data) {
-        ResponseModel obj = new ResponseModel();
+    public ResponseDTO success(T data) {
+        ResponseDTO obj = new ResponseDTO();
         obj.status = HttpStatus.OK.value();
         obj.data = data;
         return obj;

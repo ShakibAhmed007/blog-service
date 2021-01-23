@@ -1,6 +1,6 @@
 package com.dev.blogservice.users;
 
-import com.dev.blogservice.beans.ResponseModel;
+import com.dev.blogservice.beans.ResponseDTO;
 import com.dev.blogservice.beans.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -19,13 +19,13 @@ public class UserController {
 
 
     @PostMapping(value = "/user/get", produces= MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ResponseModel> getUser(@RequestBody @Valid UserDTO user) throws Throwable{
-        return ResponseEntity.ok(new ResponseModel().success(service.getUsers(user)));
+    public ResponseEntity<ResponseDTO> getUser(@RequestBody @Valid UserDTO user) throws Throwable{
+        return ResponseEntity.ok(new ResponseDTO().success(service.getUsers(user)));
     }
 
     @PostMapping(value = "/user", produces= MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ResponseModel> saveUser(@RequestBody @Valid UserModel user) throws Throwable{
+    public ResponseEntity<ResponseDTO> saveUser(@RequestBody @Valid User user) throws Throwable{
         service.save(user);
-        return ResponseEntity.ok(new ResponseModel().success(user));
+        return ResponseEntity.ok(new ResponseDTO().success(user));
     }
 }

@@ -11,12 +11,6 @@ public class CommentsService {
     @Autowired
     private CommentsRepository repository;
 
-//    public List<Comments> getCommentsList() {
-//        List<Comments> posts = new ArrayList<Comments>();
-//        repository.findAll().forEach(post -> posts.add(post));
-//        return posts;
-//    }
-
     public List<Comments> getCommentByPostId(String id) {
         List<Comments> comments = repository.findCommentsByPostId(id);
         return repository.findCommentsByPostId(id);
