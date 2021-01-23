@@ -14,7 +14,7 @@ import javax.persistence.Table;
 @Table(name = "users")
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class User extends MasterDTO {
+public class UserModel extends MasterDTO {
     @Column(name = "NAME")
     private String name;
     @Column(name = "EMAIL", nullable = false)

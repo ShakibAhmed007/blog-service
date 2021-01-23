@@ -10,12 +10,12 @@ public class UserService {
     @Autowired
     private UserRepository repository;
 
-    public User getUsers(UserDTO user) {
-        User u = repository.findUserByEmailAndPassword(user.getEmail(), user.getPassword());
+    public UserModel getUsers(UserDTO user) {
+        UserModel u = repository.findUserByEmailAndPassword(user.getEmail(), user.getPassword());
         return u;
     }
 
-    public void save(User user) {
+    public void save(UserModel user) {
         repository.saveAndFlush(user);
     }
 

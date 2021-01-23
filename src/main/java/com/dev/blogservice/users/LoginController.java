@@ -11,21 +11,13 @@ import javax.validation.Valid;
 
 @RestController
 @CrossOrigin
-@RequestMapping(value = "/users")
-public class UserController {
-
+@RequestMapping(value = "/login")
+public class LoginController {
     @Autowired
     private UserService service;
 
-
-    @PostMapping(value = "/user/get", produces= MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(produces= MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<ResponseModel> getUser(@RequestBody @Valid UserDTO user) throws Throwable{
         return ResponseEntity.ok(new ResponseModel().success(service.getUsers(user)));
-    }
-
-    @PostMapping(value = "/user", produces= MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ResponseModel> saveUser(@RequestBody @Valid UserModel user) throws Throwable{
-        service.save(user);
-        return ResponseEntity.ok(new ResponseModel().success(user));
     }
 }
